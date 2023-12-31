@@ -87,21 +87,7 @@ public class PlayerManager : MonoBehaviour
                 {
                     targetRotation = Quaternion.LookRotation(V.normalized, Vector3.up);
                 }
-            }else if(enemy2position != null)
-            {
-                float x1 = enemy2position.position.x;
-                float z1 = enemy2position.position.z;
-                float x2 = transform.position.x;
-                float z2 = transform.position.z;
-                Vector3 V = new Vector3(x1 - x2, 0, z1 - z2);
-
-                if (V.magnitude < 2)
-                {
-                    targetRotation = Quaternion.LookRotation((enemy2position.position - transform.position).normalized, Vector3.up);
-                }
-            } 
-            
-
+            }
             
 
             if (Holding_Combat)

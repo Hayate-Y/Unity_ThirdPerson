@@ -43,6 +43,7 @@ public class EnemyBase : MonoBehaviour
 
     private void OnDestroy()
     {
+        //UI‚àíœ
         if(enemyUIManager != null)
         {
             Destroy(enemyUIManager.gameObject);
