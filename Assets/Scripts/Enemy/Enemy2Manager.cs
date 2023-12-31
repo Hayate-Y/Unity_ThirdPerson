@@ -75,6 +75,11 @@ public class Enemy2Manager : MonoBehaviour
                 IntervalCount = 0;
             }
         }
+        else
+        {
+            distance = (float)System.Math.Sqrt((target.position.x - transform.position.x) * (target.position.x - transform.position.x) + (target.position.z - transform.position.z) * (target.position.z - transform.position.z));
+            animator.SetFloat("Distance", distance);
+        }
         
     }
 
