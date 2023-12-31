@@ -5980,10 +5980,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 100
   enemyUIManager: {fileID: 4011509145164158537}
-  EnemyCollider: {fileID: 1661145241401946771}
+  EnemyCollider: {fileID: 7341126990125074839}
   movespeed: 0.01
   RollEffect: {fileID: 3495178699382949156}
-  Enemy2Collider: {fileID: 7341126990125074839}
   FireBoll: {fileID: 1718276112217842243, guid: c8aa429d44430364bbbbfe6384465568, type: 3}
   ChageEffect: {fileID: 2457732593497699981}
   BulletEffect: {fileID: 8966138458658641147}

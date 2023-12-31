@@ -10,7 +10,6 @@ public class EnemyDragon : EnemyBase
     public float movespeed;
     Vector3 OldVelocity=Vector3.zero;
     public ParticleSystem RollEffect;
-    public Collider Enemy2Collider;
     public GameObject FireBoll;
     float distance;
     bool ChangeAttack;//UŒ‚‚ğØ‚è‘Ö‚¦‚ê‚é‚©‚Ç‚¤‚©
@@ -165,12 +164,12 @@ public class EnemyDragon : EnemyBase
     //UŒ‚’†‚ÍˆÚ“®‚µ‚È‚¢
     public void HideCollider()
     {
-        Enemy2Collider.enabled = false;
+        EnemyCollider.enabled = false;
         Move = true;
     }
     public void ShowCollider()
     {
-        Enemy2Collider.enabled = true;
+        EnemyCollider.enabled = true;
         Move = false;
     }
     public void ShowFire()

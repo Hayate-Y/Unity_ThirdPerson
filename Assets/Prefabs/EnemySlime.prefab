@@ -699,7 +699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 100
   enemyUIManager: {fileID: 2596829486322491352}
-  EnemyCollider: {fileID: 650746463763104666}
+  EnemyCollider: {fileID: 6031588112915768267}
 --- !u!54 &2288553804880650864
 Rigidbody:
   m_ObjectHideFlags: 0
