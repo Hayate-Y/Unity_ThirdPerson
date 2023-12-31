@@ -8,15 +8,10 @@ public class EnemyUIManager : MonoBehaviour
 {
     public Slider hpSlider;
 
-    public void Init(EnemyManager enemyManager)
+    public void Init(EnemyBase enemy)
     {
-        hpSlider.maxValue = enemyManager.MaxHP;
-        hpSlider.value = enemyManager.MaxHP;
-    }
-    public void Init2(Enemy2Manager enemyManager)
-    {
-        hpSlider.maxValue = enemyManager.MaxHP;
-        hpSlider.value = enemyManager.MaxHP;
+        hpSlider.maxValue = enemy.MaxHP;
+        hpSlider.value = enemy.MaxHP;
     }
 
     public void UpdateHP(int hp)

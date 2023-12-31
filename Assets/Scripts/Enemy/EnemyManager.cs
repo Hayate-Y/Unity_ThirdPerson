@@ -4,33 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : EnemyBase
 {
-
-    public Transform target;
     NavMeshAgent agent;
-    Animator animator;
-    int HP;
-    public int MaxHP = 100;
-    public EnemyUIManager enemyUIManager;
     int KnockBackTotal = 10;
     int KnockBackCount=11;
-    public Collider EnemyCollider;
-    public PlayerManager playerManager;
     int Interval = 120;
     int IntervalCount;
-    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
         animator.SetFloat("Distance", 10);
-        HP = MaxHP;
-        enemyUIManager.Init(this);
         IntervalCount = 0;
-        rb= GetComponent<Rigidbody>();
         //EnemyCollider= GetComponent<Collider>();
     }
 

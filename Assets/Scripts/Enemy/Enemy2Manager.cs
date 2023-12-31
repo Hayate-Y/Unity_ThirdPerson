@@ -5,18 +5,12 @@ using System;
 using DG.Tweening;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class Enemy2Manager : MonoBehaviour
+public class Enemy2Manager : EnemyBase
 {
-    public Transform target;
-    Animator animator;
     public float movespeed;
     Vector3 OldVelocity=Vector3.zero;
-    public int MaxHP = 100;
-    int HP;
     public ParticleSystem RollEffect;
-    public EnemyUIManager enemyUIManager;
     public Collider Enemy2Collider;
-    Rigidbody rb;
     public GameObject FireBoll;
     float distance;
     bool ChangeAttack;//çUåÇÇêÿÇËë÷Ç¶ÇÍÇÈÇ©Ç«Ç§Ç©
@@ -25,7 +19,6 @@ public class Enemy2Manager : MonoBehaviour
     public ParticleSystem BulletEffect;
     int Interval = 60;
     int IntervalCount;
-    public PlayerManager playerManager;
 
 
     //çUåÇÉÇÅ[Éh
@@ -38,10 +31,6 @@ public class Enemy2Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
-        HP = MaxHP;
-        enemyUIManager.Init2(this);
-        rb= GetComponent<Rigidbody>();
         ChageEffect.Stop();
         BulletEffect.Stop();
         RollEffect.Stop();
