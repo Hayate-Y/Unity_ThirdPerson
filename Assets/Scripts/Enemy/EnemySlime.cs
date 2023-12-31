@@ -47,6 +47,8 @@ public class EnemySlime : EnemyBase
             animator.SetBool("Interval", true);
             IntervalCount++;
         }
+
+        UpdateHPBar();
     }
 
     //ƒ_ƒ[ƒWó‚¯‚½‚ç

@@ -68,7 +68,8 @@ public class EnemyDragon : EnemyBase
             distance = (float)System.Math.Sqrt((target.position.x - transform.position.x) * (target.position.x - transform.position.x) + (target.position.z - transform.position.z) * (target.position.z - transform.position.z));
             animator.SetFloat("Distance", distance);
         }
-        
+
+        UpdateHPBar();
     }
 
     //çUåÇÉpÉ^Å[ÉìÇP-----------------------------------------------------------------------

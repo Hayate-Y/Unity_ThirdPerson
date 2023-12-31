@@ -29,6 +29,12 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField]
     PlayerManager player;
 
+    [SerializeField]
+    GameObject HPBarPrefab;
+
+    [SerializeField]
+    Transform HPBarParent;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,15 +42,21 @@ public class EnemyGenerator : MonoBehaviour
         {
             for(int i = 0; i < data.spawnNum; i++)
             {
+                // 座標の生成
                 float x = Random.Range(spawnMinX, spawnMaxX);
                 float y = 1f;
                 float z = Random.Range(spawnMinZ, spawnMaxZ);
 
+                // 敵オブジェクトの生成、座標設定
                 var obj = Instantiate(data.prefab);
                 obj.transform.position = new Vector3(x, y, z);
 
+                // 敵HPバーの生成
+                var hpBarObj = Instantiate(HPBarPrefab, HPBarParent);
+                var hpBar = hpBarObj.GetComponent<EnemyUIManager>();
+
                 var enemy = obj.GetComponent<EnemyBase>();
-                enemy.SetParam(player);
+                enemy.SetParam(player, hpBar);
             }
         }
     }
