@@ -31,6 +31,9 @@ public class PlayerManager : MonoBehaviour
     public ParticleSystem HitEffect;
     public Transform enemy1position;
     public Transform enemy2position;
+    float time = 0;
+    public FinishUIManager FinishUIManager;
+    public GameObject FinishUI;
 
     void Start()
     {
@@ -56,6 +59,13 @@ public class PlayerManager : MonoBehaviour
 
         //–³“GŽžŠÔ‚©
         SuperTime();
+
+        time += Time.deltaTime;
+        if(time>40f)
+        {
+            FinishUIManager.Init();
+            FinishUI.SetActive(true);
+        }
 
         if (Input.GetKey(KeyCode.Escape))
         {

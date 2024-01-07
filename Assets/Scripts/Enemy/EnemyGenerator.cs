@@ -37,6 +37,9 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField]
     Transform HPBarParent;
 
+    [SerializeField]
+    EnemyDestroyCount des;
+
 
     //public int[] enemycount; //ìGÇÃêî
     float time = 0;
@@ -68,7 +71,7 @@ public class EnemyGenerator : MonoBehaviour
                 var hpBar = hpBarObj.GetComponent<EnemyUIManager>();
 
                 var enemy = obj.GetComponent<EnemyBase>();
-                enemy.SetParam(player, hpBar);
+                enemy.SetParam(player, hpBar , des);
             }
             j++;
         }
@@ -108,6 +111,6 @@ public class EnemyGenerator : MonoBehaviour
         var hpBar = hpBarObj.GetComponent<EnemyUIManager>();
 
         var enemy = obj.GetComponent<EnemyBase>();
-        enemy.SetParam(player, hpBar);
+        enemy.SetParam(player, hpBar , des);
     }
 }

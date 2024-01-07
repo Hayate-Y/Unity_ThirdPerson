@@ -21,17 +21,20 @@ public class EnemyBase : MonoBehaviour
     protected Animator animator;
     protected EnemyUIManager enemyUIManager;
     protected RectTransform HPbar;
+    
+    public EnemyDestroyCount enemyDestroyCount;
 
     // HP‚ð•\Ž¦‚·‚é‹——£
     static float HPDispDistance = 20;
 
-    public void SetParam(PlayerManager player, EnemyUIManager eui)
+    public void SetParam(PlayerManager player, EnemyUIManager eui , EnemyDestroyCount des)
     {
         enemyUIManager = eui;
         target = player.transform;
         playerManager = player;
         enemyUIManager.Init(this);
         HPbar = enemyUIManager.GetComponent<RectTransform>();
+        enemyDestroyCount = des;
     }
 
     private void Awake()
@@ -48,6 +51,8 @@ public class EnemyBase : MonoBehaviour
         {
             Destroy(enemyUIManager.gameObject);
         }
+
+        enemyDestroyCount.DestroyCount++;
     }
 
     protected void UpdateHPBar()
